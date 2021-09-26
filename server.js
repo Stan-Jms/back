@@ -101,6 +101,15 @@ const init = async () => {
     const server = Hapi.server({
         port: process.env.PORT || 3001,
         host: '0.0.0.0',
+        routes: {
+            cors:{
+                origin: ['*'],
+                headers: ['Authorization'],
+                exposedHeaders: ['Accept'],
+                additionalExposedHeaders: ['Accept'],
+                credentials: true
+            }
+        }
     });
     await server.register([{
         plugin: require("@hapi/basic")
@@ -110,19 +119,13 @@ const init = async () => {
     server.route({
         method:'GET',
         path:'/',
-        config: {
-            cors: {
-                origin: ['*'],
-                additionalHeaders: ['cache-control', 'x-requested-with']
-            }
-        },
         handler: (request,h) => {
             let end_url ="&format=json";
             return GetAllData(end_url);
         },
         options: {
-            auth: 'login'
-
+            auth: 'login',
+            cors:true
         }
     });
 
