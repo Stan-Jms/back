@@ -111,9 +111,6 @@ const init = async () => {
     server.route({
         method:'GET',
         path:'/',
-        "routes": {
-            "cors": true
-        },
         handler: (request,h) => {
             let end_url ="&format=json";
             return GetAllData(end_url);
