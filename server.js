@@ -102,7 +102,6 @@ const init = async () => {
         port: process.env.PORT || 3001,
         host: '0.0.0.0',
     });
-    server.connection({ routes: { cors: true } })
     await server.register([{
         plugin: require("@hapi/basic")
     }]);
@@ -111,6 +110,12 @@ const init = async () => {
     server.route({
         method:'GET',
         path:'/',
+        config: {
+            cors: {
+                origin: ['*'],
+                additionalHeaders: ['cache-control', 'x-requested-with']
+            }
+        },
         handler: (request,h) => {
             let end_url ="&format=json";
             return GetAllData(end_url);
