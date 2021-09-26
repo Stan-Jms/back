@@ -14,7 +14,6 @@ const GetAllData = async (end_url) => {
     let i=0;
     while(i<URL_VALUES.length)
     {
-        response.push(URL_VALUES[i].replace("/?",""))
         response.push(await GetData(URL_VALUES[i],end_url));
         i+=1;
     } 
