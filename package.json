@@ -1,0 +1,24 @@
+{
+  "name": "hapi-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/basic": "^6.0.0",
+    "@hapi/hapi": "^20.1.5",
+    "@hapi/hoek": "^9.2.0",
+    "axios": "^0.21.4",
+    "bcrypt": "^5.0.1",
+    "hapi": "^18.1.0",
+    "node-fetch": "^3.0.0",
+    "request": "^2.88.2",
+    "socket.io": "^4.2.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
