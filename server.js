@@ -19,7 +19,7 @@ const GetAllData = async (end_url) => {
         k+=1;
     }
 
-    for(i=0;i<stock.length;i++){
+    for(let i=0;i<stock.length;i++){
         while(j<stock[i].length){
             if(i===1){
                 response.push(stock[i][j]);
