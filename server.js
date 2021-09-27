@@ -4,7 +4,7 @@ const Hapi = require('@hapi/hapi');
 const Bcrypt = require('bcrypt');
 const axios = require("axios");
 
-
+    
 const BASE_URL = "https://swapi.dev/api/";
 const URL_VALUES = ["people/?","films/?","species/?","starships/?","vehicles/?","planets/?"]
 
