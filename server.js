@@ -11,7 +11,7 @@ const URL_VALUES = ["people/?","films/?","species/?","starships/?","vehicles/?",
 
 const GetAllData = async (end_url) => {
     let response =[];
-    let k=0;
+    let k=0,i=0,j=0;
     let stock =[];
     while(k<URL_VALUES.length)
     {
@@ -19,8 +19,8 @@ const GetAllData = async (end_url) => {
         k+=1;
     }
 
-    for(let i=0;i<response.length;i++){
-        for(let j=0;j<response[i].length;j++){
+    for(i=0;i<response.length;i++){
+        for(j=0;j<response[i].length;j++){
             if(i===1){
                 stock.push(response[i][j].title);
             }
