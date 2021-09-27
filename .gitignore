@@ -1,5 +1,3 @@
-package.json
-package-lock.json
 node_modules/.bin/detect-libc
 node_modules/.bin/detect-libc.cmd
 node_modules/.bin/detect-libc.ps1
