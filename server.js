@@ -12,12 +12,22 @@ const URL_VALUES = ["people/?","films/?","species/?","starships/?","vehicles/?",
 const GetAllData = async (end_url) => {
     let response =[];
     let i=0;
+    let stock =[];
     while(i<URL_VALUES.length)
     {
-        response.push(URL_VALUES[i].replace("/?",""))
         response.push(await GetData(URL_VALUES[i],end_url));
         i+=1;
-    } 
+    }
+    
+    for(let i=0;i<response.length;i++){
+        for(let j=0;j<response[i].length;j++){
+            if(i===1){
+                stock.push(response[i][j].title);
+            }
+            stock.push(response[i][j].name);
+        }
+    }
+
     return response;
 }
 
@@ -100,7 +110,7 @@ const init = async () => {
 
     const server = Hapi.server({
         port: process.env.PORT || 3001,
-        host: '0.0.0.0',
+        host: 'localhost',
         routes: {
             cors:{
                 origin: ['*'],
