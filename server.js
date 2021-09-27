@@ -15,16 +15,16 @@ const GetAllData = async (end_url) => {
     let stock =[];
     while(k<URL_VALUES.length)
     {
-        response.push(await GetData(URL_VALUES[i],end_url));
+        stock.push(await GetData(URL_VALUES[i],end_url));
         k+=1;
     }
 
-    for(i=0;i<response.length;i++){
-        for(j=0;j<response[i].length;j++){
+    for(i=0;i<stock.length;i++){
+        for(j=0;j<stock[i].length;j++){
             if(i===1){
-                stock.push(response[i][j].title);
+                response.push(stock[i][j].title);
             }
-            stock.push(response[i][j].name);
+            response.push(stock[i][j].name);
         }
     }
 
