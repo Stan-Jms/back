@@ -22,11 +22,12 @@ const GetAllData = async (end_url) => {
     for(i=0;i<stock.length;i++){
         for(j=0;j<stock[i].length;j++){
             if(i===1){
-                response.push(stock[i][j].title);
+                response.push(stock[i][j]);
             }
-            response.push(stock[i][j].name);
+            response.push(stock[i][j]);
         }
     }
+    console.log(response);
 
     return response;
 }
