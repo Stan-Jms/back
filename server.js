@@ -15,22 +15,19 @@ const GetAllData = async (end_url) => {
     let stock =[];
     while(k<URL_VALUES.length)
     {
-        stock.push(await GetData(URL_VALUES[i],end_url));
+        stock.push(await GetData(URL_VALUES[k],end_url));
         k+=1;
     }
-
-    for(i=0;i<stock.length;i++){
+    while(i<stock.length){
         j=0;
         while(j<stock[i].length){
-            if(i===1){
-                response.push(stock[i][j]);
-                j+=1;
-            }
             response.push(stock[i][j]);
+            j+=1;
         }
+        i+=1;
     }
-    console.log(response);
-
+    /*console.log(response);*/
+    
     return response;
 }
 
