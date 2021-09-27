@@ -11,14 +11,14 @@ const URL_VALUES = ["people/?","films/?","species/?","starships/?","vehicles/?",
 
 const GetAllData = async (end_url) => {
     let response =[];
-    let i=0;
+    let k=0;
     let stock =[];
-    while(i<URL_VALUES.length)
+    while(k<URL_VALUES.length)
     {
         response.push(await GetData(URL_VALUES[i],end_url));
-        i+=1;
+        k+=1;
     }
-    
+
     for(let i=0;i<response.length;i++){
         for(let j=0;j<response[i].length;j++){
             if(i===1){
