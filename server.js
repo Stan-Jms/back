@@ -20,10 +20,11 @@ const GetAllData = async (end_url) => {
     }
 
     for(i=0;i<stock.length;i++){
+        j=0;
         while(j<stock[i].length){
             if(i===1){
                 response.push(stock[i][j]);
-                j++;
+                j+=1;
             }
             response.push(stock[i][j]);
         }
@@ -112,7 +113,7 @@ const init = async () => {
 
     const server = Hapi.server({
         port: process.env.PORT || 3001,
-        host: '0.0.0.0',
+        host: /*'0.0.0.0'*/"localhost",
         routes: {
             cors:{
                 origin: ['*'],
