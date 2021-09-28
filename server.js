@@ -6,7 +6,7 @@ const axios = require("axios");
 
 
 const BASE_URL = "https://swapi.dev/api/";
-const URL_VALUES = ["people/?","films/?","species/?","starships/?","vehicles/?","planets/?"]
+const URL_VALUES = ["films/?","people/?","species/?","starships/?","vehicles/?","planets/?"]
 
 
 const GetAllData = async (end_url) => {
