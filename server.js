@@ -13,6 +13,7 @@ const GetAllData = async (end_url) => {
     let response =[];
     let k=0,j=0,i=0;
     let stock =[];
+    let reg = new RegExp('/\/[0-99]/');
     while(k<URL_VALUES.length)
     {
         stock.push(await GetData(URL_VALUES[k],end_url));
@@ -30,8 +31,7 @@ const GetAllData = async (end_url) => {
     response.forEach((element,index) => {
         element.id = index;
         element.type = element.url.replace("https://swapi.dev/api/","");
-        element.type = element.type.replace("/\//[1-99]/","");
-        
+        element.type = element.type.replace(reg,"");
     });
     
     return response;
