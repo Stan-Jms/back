@@ -22,11 +22,15 @@ const GetAllData = async (end_url) => {
         j=0;
         while(j<stock[i].length){
             response.push(stock[i][j]);
+            response.type = URL_VALUES[k].replace("/?","");
             j+=1;
         }
         i+=1;
     }
-    /*console.log(response);*/
+    response.forEach((element,index) => {
+        element.id = index;
+        
+    });
     
     return response;
 }
