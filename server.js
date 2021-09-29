@@ -22,7 +22,7 @@ const GetAllData = async (end_url) => {
         j=0;
         while(j<stock[i].length){
             response.push(stock[i][j]);
-            response.type = URL_VALUES[k].replace("/?","");
+            response.type = URL_VALUES[i].replace("/?","");
             j+=1;
         }
         i+=1;
