@@ -5,7 +5,7 @@ const Bcrypt = require('bcrypt');
 const axios = require("axios");
 
 
-const BASE_URL = "https://swapi.dev/api/";
+const BASE_URL = "https://swapi.tech/api/";
 const URL_VALUES = ["films/?","people/?","species/?","starships/?","vehicles/?","planets/?"]
 
 
@@ -30,7 +30,7 @@ const GetAllData = async (end_url) => {
     }
     response.forEach((element,index) => {
         element.id = index;
-        element.type = element.url.replace("https://swapi.dev/api/","");
+        element.type = element.url.replace("https://swapi.tech/api/","");
         element.type = element.type.replace(reg,"");
     });
     
