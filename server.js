@@ -22,13 +22,15 @@ const GetAllData = async (end_url) => {
         j=0;
         while(j<stock[i].length){
             response.push(stock[i][j]);
-            response.type = URL_VALUES[i].replace("/?","");
+            
             j+=1;
         }
         i+=1;
     }
     response.forEach((element,index) => {
         element.id = index;
+        element.type = element.url.replace("https://swapi.dev/api/","");
+        element.type = element.type.replace("/\//[1-99]/","");
         
     });
     
