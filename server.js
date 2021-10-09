@@ -13,7 +13,7 @@ const GetAllData = async (end_url) => {
     let response =[];
     let k=0,j=0,i=0;
     let stock =[];
-    let reg = new RegExp('/\/[0-99]/');
+    let reg = /\/[0-9]+\//s;
     while(k<URL_VALUES.length)
     {
         stock.push(await GetData(URL_VALUES[k],end_url));
@@ -115,7 +115,7 @@ const init = async () => {
 
     const server = Hapi.server({
         port: process.env.PORT || 3001,
-        host: '0.0.0.0'/*"localhost"*/,
+        host: /*'0.0.0.0'*/"localhost",
         routes: {
             cors:{
                 origin: ['*'],
